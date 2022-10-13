@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfbfb;
+  --container :1350px;
+  --cTopMargin:80px;
+  --cTopMargin2:60px;
+  --primary:#3F455F;
+  --secondary:#CAB500;
+  --grey:#F9F9F9;
+
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0px;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+@media screen and (max-width:1350px){
+  body{
+    --container :95%;
+
+  }  
+}
+@media screen and (max-width:740px){
+  body{
+    --cTopMargin:40px;
+    --cTopMargin2:20px;
+
+  }  
+}
+
+.off{
+  display: none;
+}
