@@ -1,7 +1,4 @@
 import "./navbar.css";
-import CompanyLogo from "images/CompanyLogo";
-import HelplineLogo from "images/Helpline";
-import Logo from "images/FinalLogo.svg"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Box from "@mui/material/Box";
@@ -9,57 +6,74 @@ import Box from "@mui/material/Box";
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from "@mui/material/IconButton";
 
-import { Drawer } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
 
-const Navbar = (props) => {
-    // sorting data
-    const data=props.data.sort((a, b) => a.fields.timeUnix > b.fields.timeUnix ? 1 : -1)
+const navElements = [
+    {
+        name:"Home",
+        link:"/"
+    },
+    {
+        name:"About Us",
+        link:"/about-us"
+    },
+    {
+        name:"Products",
+        link:"/products"
+    },
+    {
+        name:"Dealers",
+        link:"/dealers"
+    },
+]
+
+const Navbar = () => {
 
     const [drawer,setDrawer] =useState(false);
 
-    const navElements =() =>{
-        return <Box className="navElements">
-            {data && data.map((row) =>{
-                return <a  key={row.id}
-                            onClick={() => setDrawer(false)}
-                            href={`/${row.fields.value}`}
-                            className="part2Element">{row.fields.name}</a>
-
-            })}
-        </Box>
-    }
+    const navRight =() =>{
+        return(
+            <div className="navRight">
+                {navElements.map(row =>{
+                    return <a key={row.link} className="navLinkElement" href={row.link}>{row.name}</a>
+                })}
+                {/* <a href="tel:+91-95389-36616"><div className="helpline"></div></a> */}
+                <div className="navButtons">
+                    <button className="navWhatsappBtn">Whatsapp</button>
+                    <button className="navContactUsBtn">Contact Us</button>
+                </div>
+            </div> 
+        )
+    }  
 
     return (
-        <Box className="Navbar" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} position={{xs:"fixed",md:'static'}}>
-            <div className="part1">
-                <div className="left">
-                    <Link to="/"><img src={Logo} alt="" className="compLogo" /></Link>
-                </div>
-                <div className="right">
-                    <a href="tel:+91-95389-36616"><div className="helpline"><HelplineLogo /></div></a>
-                    <IconButton aria-label="delete" onClick={() =>setDrawer(!drawer)} sx={{display:{xs:'block',md:'none'}}}>
-                        <MenuIcon />
+            <Box component='nav' className="Navbar" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} position={{xs:"fixed",md:'static'}}>
+                <div className="insideNav">
+                    <div className="navLeft">
+                        <Link to="/"><img src="./images/CompanyLogo.svg" alt="" className="compLogo" /></Link>
+                    </div>
+                   
+                    <IconButton aria-label="delete" onClick={() =>setDrawer(!drawer)} 
+                        sx={{display:{xs:'block',md:'none'},width:'50px',height:'50px',alignSelf:'center'}}>
+                            <MenuIcon />
                     </IconButton>
+                    <div className="navRightDesktop">
+                        {navRight()}
+                    </div>
+                    
+                    
                 </div>
-            </div> 
-            
-            <div className="part2">
-                {navElements()}
+                <Drawer
+                    anchor='right'
+                    variant="temporary"
+                    open={drawer}
+                    onClose={()=>setDrawer(false)}
+                >
+                    <Box height={100} />
+                    {navRight()}
                 
-              
-            </div> 
-
-            <Drawer
-                anchor='right'
-                variant="temporary"
-                open={drawer}
-                onClose={()=>setDrawer(false)}
-            >
-                <Box height={100} />
-                {navElements()}
-               
-            </Drawer>
-        </Box>
+                </Drawer>
+            </Box>
       );
 }
  

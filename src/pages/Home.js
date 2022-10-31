@@ -1,6 +1,6 @@
 import EmblaCarousel from "embla-carousel";
 
-
+import HeroBanner from "components/Homepage/HeroBanner/HeroBanner";
 
 
 
@@ -46,7 +46,7 @@ const Home = () => {
 
     return ( 
          <>
-           
+           <HeroBanner />
          </>
      );
 }

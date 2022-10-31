@@ -1,0 +1,110 @@
+/* heroHead Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
+
+.heroBanner{
+    width:var(--container);
+    min-height: 585px;
+    display: flex;
+    margin: auto;
+}
+.heroBannerLeft{
+    width: 55%;
+    position: relative;
+    min-height: 100%;
+    padding: 15px;
+    overflow: hidden;
+}
+.heroLeftPattern{
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+}
+.heroHead{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+.heroHeadColorText{
+    color: var(--secondary1);
+
+}
+.heroDescription{
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 22px;
+    color: #2C2738;
+}
+
+.heroButton{
+    width: 150px;
+    height: 50px;
+    border: 0px;
+    background: linear-gradient(180deg,var(--secondary1),var(--secondary2));
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-top: 40px;
+}
+.heroBannerRight{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 400px;
+    align-self: center;
+}
+.heroImg{
+    width: 100%;
+}
+
+@media screen and (max-width:1200px){
+    .heroBanner{
+        min-height: 400px;
+    }
+    .heroBannerLeft{
+        align-self: center;
+    }
+   .heroHead{
+    font-size: 34px;
+    margin-top: 50px;
+   } 
+}
+@media screen and (max-width:900px){
+    .heroBanner{
+        flex-direction: column;
+    }
+    .heroBannerLeft{
+        width: 80%;
+    }
+    .heroHead{
+        margin-top: 50px;
+    }
+    .heroBannerRight{
+        width: 80%;
+    }
+}
+@media screen and (max-width:640px){
+   
+    .heroBannerLeft{
+        width: 95%;
+    }
+    .heroHead{
+        font-size: 30px;
+    }
+    .heroDescription{
+        font-size: 18px;
+    }
+    .heroBannerRight{
+        width: 95%;
+    }
+}
+@media screen and (max-width:450px){
+    .heroHead{
+        font-size: 26px;
+    }
+}

@@ -6,14 +6,14 @@ import {
 } from "react-router-dom";
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar/Navbar';
-import ContentPage from 'components/ContentPage/ContentPage';
+// import ContentPage from 'components/ContentPage/ContentPage';
 import { useState,useEffect } from 'react';
 
 // mui Theme
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 import {  ThemeProvider } from '@mui/material/styles';
-import Footer from 'components/Footer/Footer';
+// import Footer from 'components/Footer/Footer';
 import axios from 'axios';
 import { Box } from '@mui/material';
 import PrivacyPolicy from 'pages/privacypolicy';
@@ -50,9 +50,9 @@ function App() {
 
   // Axois Defaults
 
-  axios.defaults.baseURL = 'https://api.airtable.com/v0/appb9UG9gbD9QyOx0';
-  axios.defaults.headers.common['Authorization'] = "Bearer key0K8InZ2JdeKzLR";
-  axios.defaults.headers.post['Content-Type'] = 'application/json';
+  // axios.defaults.baseURL = 'https://api.airtable.com/v0/appb9UG9gbD9QyOx0';
+  // axios.defaults.headers.common['Authorization'] = "Bearer key0K8InZ2JdeKzLR";
+  // axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 
 
@@ -64,14 +64,14 @@ function App() {
       
         <BrowserRouter>
           <ThemeProvider theme={theme}>
-            {navHead && <Navbar data={navHead}/>}
+            {<Navbar />}
             <Box height={{xs:80,md:0}}/>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-              <Route path=":subPage" element={navHead && <ContentPage elements={navElements} head={navHead}  />} />
+              {/* <Route path="/privacypolicy" element={<PrivacyPolicy />} /> */}
+              {/* <Route path=":subPage" element={navHead && <ContentPage elements={navElements} head={navHead}  />} /> */}
             </Routes>
-            {navHead && navElements && <Footer head={navHead} elements={navElements}/>}
+            {/* {navHead && navElements && <Footer head={navHead} elements={navElements}/>} */}
           </ThemeProvider >
         </BrowserRouter>
 

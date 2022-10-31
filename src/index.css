@@ -3,12 +3,12 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fdfbfb;
-  --container :1350px;
+  --container :1400px;
   --cTopMargin:80px;
   --cTopMargin2:60px;
-  --primary:#3F455F;
-  --secondary:#CAB500;
+  --primary:#083E57;
+  --secondary1:#71D83B;
+  --secondary2:#60E57C;
   --grey:#F9F9F9;
 
 }
