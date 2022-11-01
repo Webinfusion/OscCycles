@@ -1,109 +1,111 @@
-/* heroHead Font */
+/* belowBannerHead Font */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
 
-.heroBannerBg{
+.belowBannerBg{
     width: 100%;
-    background-color: white;
 }
-.heroBanner{
+.belowBanner{
     width:var(--container);
     min-height: 585px;
     display: flex;
     margin: auto;
     
 }
-.heroBannerLeft{
-    width: 55%;
+.belowBannerLeft{
+    width: 45%;
     position: relative;
     min-height: 100%;
     padding: 15px;
     overflow: hidden;
 }
-.heroLeftPattern{
-    position: absolute;
-    width: 100%;
-    bottom: 0%;
-}
 
-
-.heroHead{
+.belowBannerHead{
     font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 44px;
+    font-size: 48px;
     color: var(--primary);
     text-transform: uppercase;
     margin-top: 80px;
 }
-.heroHeadColorText{
+.belowBannerHeadColorText{
     color: var(--secondary1);
 
 }
-.heroDescription{
+.belowBannerDescription{
     margin-top: 20px;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 20px;
     color: #2C2738;
 }
 
-.heroButton{
-    border-radius: 32px;
+.belowBannerButton{
     width: 200px;
     height: 60px;
+    border-radius: 32px;
+    margin-top: 40px;
 }
-.heroBannerRight{
-    width: 45%;
+.belowBannerButton:hover{
+    background: linear-gradient(270deg,var(--secondary1),var(--secondary2));
+    box-shadow: 1px 1px 5px rgb(222, 219, 219);
+
+}
+
+.belowBannerRight{
+    width: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 400px;
     align-self: center;
 }
-.heroImg{
-    width: 100%;
+.belowBannerImg{
+    width: 75%;
 }
 
 @media screen and (max-width:1200px){
-    .heroBanner{
+    .belowBanner{
         min-height: 400px;
     }
-    .heroBannerLeft{
+    .belowBannerLeft{
         align-self: center;
     }
-   .heroHead{
+   .belowBannerHead{
     font-size: 34px;
     margin-top: 50px;
    } 
 }
 @media screen and (max-width:900px){
-    .heroBanner{
+    .belowBanner{
         flex-direction: column;
     }
-    .heroBannerLeft{
+    .belowBannerLeft{
         width: 80%;
     }
-    
-    .heroBannerRight{
-        width: 80%;
+    .belowBannerHead{
+        margin-top: 50px;
+    }
+    .belowBannerRight{
+        width: 100%;
     }
 }
 @media screen and (max-width:640px){
    
-    .heroBannerLeft{
+    .belowBannerLeft{
         width: 95%;
     }
-    .heroHead{
+    .belowBannerHead{
         font-size: 30px;
     }
-    .heroDescription{
+    .belowBannerDescription{
         font-size: 16px;
     }
-    .heroBannerRight{
+   
+    .belowBannerImg{
         width: 95%;
     }
 }
 @media screen and (max-width:450px){
-    .heroHead{
+    .belowBannerHead{
         font-size: 26px;
     }
 }

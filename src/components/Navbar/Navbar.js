@@ -1,6 +1,6 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Box from "@mui/material/Box";
 
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,68 +8,67 @@ import IconButton from "@mui/material/IconButton";
 
 import Drawer from "@mui/material/Drawer";
 
-const navElements = [
-    {
-        name:"Home",
-        link:"/"
-    },
-    {
-        name:"About Us",
-        link:"/about-us"
-    },
-    {
-        name:"Products",
-        link:"/products"
-    },
-    {
-        name:"Dealers",
-        link:"/dealers"
-    },
-]
+import { navElements } from "assets/data";
 
 const Navbar = () => {
 
     const [drawer,setDrawer] =useState(false);
+    const [isScrolled,setIsScrolled] =useState(false);
+
+    window.onscroll =() =>{
+        if(window.scrollY <=200)  setIsScrolled(false);
+        else setIsScrolled(true);
+    }            
+    
+    
 
     const navRight =() =>{
         return(
-            <div className="navRight">
+            <div className={isScrolled === true ? "navRight navRightScrolled" :"navRight"}>
                 {navElements.map(row =>{
-                    return <a key={row.link} className="navLinkElement" href={row.link}>{row.name}</a>
+                    return <a key={row.link} 
+                                className={`${isScrolled === true ? "navLinkElement navLinkElementScrolled" :"navLinkElement" } 
+                                            ${window.location.pathname === row.link ? isScrolled === true ? " navLinkElementScrolledActive " : "navLinkElementActive" : '' }` }
+                                href={row.link}>
+                                {row.name}
+                            </a>
                 })}
                 {/* <a href="tel:+91-95389-36616"><div className="helpline"></div></a> */}
                 <div className="navButtons">
-                    <button className="navWhatsappBtn">Whatsapp</button>
-                    <button className="navContactUsBtn">Contact Us</button>
+                    <button className={isScrolled === true ? "navWhatsappBtn navWhatsappBtnScrolled" :"navWhatsappBtn"}>Whatsapp</button>
+                    <button className={isScrolled === true ? "navContactUsBtn navContactUsBtnScrolled " :"navContactUsBtn"}>Contact Us</button>
                 </div>
             </div> 
         )
     }  
 
     return (
-            <Box component='nav' className="Navbar" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} position={{xs:"fixed",md:'static'}}>
-                <div className="insideNav">
+            <Box component='header' className={isScrolled === true ? "Navbar navScrolled" :"Navbar"} sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} position="fixed">
+                <nav className="insideNav">
                     <div className="navLeft">
-                        <Link to="/"><img src="./images/CompanyLogo.svg" alt="" className="compLogo" /></Link>
+                        <Link to="/"><img src="./images/CompanyLogo.svg" alt="" 
+                            className={isScrolled === true ? "compLogo compLogoScrolled" :"compLogo"} />
+                        </Link>
                     </div>
                    
                     <IconButton aria-label="delete" onClick={() =>setDrawer(!drawer)} 
                         sx={{display:{xs:'block',md:'none'},width:'50px',height:'50px',alignSelf:'center'}}>
-                            <MenuIcon />
+                            <MenuIcon sx={{color:isScrolled === true && "#FFFFFF"}} />
                     </IconButton>
                     <div className="navRightDesktop">
                         {navRight()}
                     </div>
                     
                     
-                </div>
+                </nav>
                 <Drawer
+                    
                     anchor='right'
                     variant="temporary"
                     open={drawer}
                     onClose={()=>setDrawer(false)}
                 >
-                    <Box height={100} />
+                    <Box height={80} />
                     {navRight()}
                 
                 </Drawer>

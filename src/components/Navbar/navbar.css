@@ -1,7 +1,15 @@
 .Navbar{
     width: 100%;
     height: 100px;
-    background-color: white;
+    background: white;
+    position: fixed;
+    transition: all .5s ease-in-out;
+}
+.navScrolled{
+    background:linear-gradient(to right,var(--primary),var(--primary2));
+    box-shadow: 1px 1px 5px rgba(57, 57, 57, 0.521);
+    height: 80px;
+
 }
 .insideNav{
     width: var(--container);
@@ -13,6 +21,12 @@
 
 .compLogo{
     width:150px;
+    padding: 10px 15px;
+    transition: all .5s ease-in-out;
+
+}
+.compLogoScrolled{
+    width:100px;
     padding: 10px 15px;
 }
 .navRightDesktop{
@@ -31,7 +45,25 @@
     font-size: 18px;
     color: var(--primary);
     font-weight: 500;
-    margin-right: 10px;
+    padding: 8px 15px;
+    transition: all .2s ease-in-out;
+}
+.navLinkElement:hover,.navLinkElementActive{
+    background-color: var(--primary2);
+    color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(57, 57, 57, 0.521);
+}
+.navLinkElementScrolled{
+    color: #FFFFFF;
+    font-weight: 400;
+}
+.navLinkElementScrolled:hover,.navLinkElementScrolledActive{
+    background-color: #FFFFFF;
+    color: var(--primary2);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.545);
+    font-weight: 500;
 }
 .navWhatsappBtn{
     width: 120px;
@@ -45,6 +77,11 @@
     margin-right: 10px;
 
 }
+.navWhatsappBtnScrolled{
+    background-color: #0D9F16;
+    color: #FFFFFF;
+    border: none;
+}
 .navContactUsBtn{
     width: 120px;
     border-radius: 4px;
@@ -56,6 +93,10 @@
     background: var(--primary);
 
 }
+.navContactUsBtnScrolled{
+    background-color: #FFFFFF;
+    color: var(--primary);
+}
 
 
 
@@ -63,22 +104,30 @@
     
     .navRight{
         flex-direction: column;
-        justify-content: space-around;
-        height: 50%;
-        width: 280px;
+        height: 100%;
+        width: 260px;
+        justify-content: flex-start;
+        margin: 0px;
+        padding-top: 50px;
+    }
+    .navRightScrolled{
+        background: var(--primary2);
+        
     }
     .navLinkElement{
-        width: 100%;
-        padding: 20px;
+        width: 90%;
+        padding: 10px 0px;
         text-align: center;
+        margin-top: 15px;
     }
-    .navLinkElement:hover{
-        background: var(--primary);
-        color: white;
+    .navWhatsappBtn{
+        width: 100px;
+        margin-top: 15px;
     }
-    .compLogo{
-        width: 130px;
-    }
+    .navContactUsBtn{
+        width: 100px;
+       }
+    
     .navRightDesktop{
         display: none;
     }

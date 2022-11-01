@@ -4,8 +4,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from 'pages/Home';
-import Navbar from 'components/Navbar/Navbar';
 // import ContentPage from 'components/ContentPage/ContentPage';
 import { useState,useEffect } from 'react';
 
@@ -16,7 +14,11 @@ import {  ThemeProvider } from '@mui/material/styles';
 // import Footer from 'components/Footer/Footer';
 import axios from 'axios';
 import { Box } from '@mui/material';
-import PrivacyPolicy from 'pages/privacypolicy';
+
+import Navbar from 'components/Navbar/Navbar';
+import Footer from 'components/Footer/Footer';
+import Home from 'pages/Home';
+// import PrivacyPolicy from 'pages/privacypolicy';
 
 
 
@@ -64,14 +66,14 @@ function App() {
       
         <BrowserRouter>
           <ThemeProvider theme={theme}>
-            {<Navbar />}
-            <Box height={{xs:80,md:0}}/>
+            <Navbar />
+            <Box height={80}/>
             <Routes>
               <Route path="/" element={<Home />} />
               {/* <Route path="/privacypolicy" element={<PrivacyPolicy />} /> */}
               {/* <Route path=":subPage" element={navHead && <ContentPage elements={navElements} head={navHead}  />} /> */}
             </Routes>
-            {/* {navHead && navElements && <Footer head={navHead} elements={navElements}/>} */}
+            <Footer />
           </ThemeProvider >
         </BrowserRouter>
 
