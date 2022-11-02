@@ -2,43 +2,23 @@ import EmblaCarousel from "embla-carousel";
 
 import HeroBanner from "components/Homepage/HeroBanner/HeroBanner";
 import BelowBanner from "components/Homepage/BelowBanner/BelowBanner";
+import Testimonials from "components/Homepage/Testimonials/Testimonials";
 
 
 
 const Home = () => {
 
-   const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
-  prevBtn.addEventListener('click', embla.scrollPrev, false);
-  nextBtn.addEventListener('click', embla.scrollNext, false);
-};
-
- const disablePrevNextBtns = (prevBtn, nextBtn, embla) => {
-  return () => {
-    if (embla.canScrollPrev()) prevBtn.removeAttribute('disabled');
-    else prevBtn.setAttribute('disabled', 'disabled');
-
-    if (embla.canScrollNext()) nextBtn.removeAttribute('disabled');
-    else nextBtn.setAttribute('disabled', 'disabled');
-  };
-};
-
-
   
   const setupEmblaCarousel = (emblaNode, options) => {
     const viewPort = emblaNode.querySelector(".embla__viewport");
-    const prevBtn = emblaNode.querySelector(".embla__button--prev");
-    const nextBtn = emblaNode.querySelector(".embla__button--next");
     const embla = EmblaCarousel(viewPort, options);
-    const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
+    
   
-    setupPrevNextBtns(prevBtn, nextBtn, embla);
-  
-    embla.on("select", disablePrevAndNextBtns);
-    embla.on("init", disablePrevAndNextBtns);
   };
   
   const options = {dragFree : true,containScroll: "trimSnaps" };
   const emblaNodes = [].slice.call(document.querySelectorAll(".embla"));
+  
   const emblaCarousels = emblaNodes.map(emblaNode =>
     setupEmblaCarousel(emblaNode, options)
   );
@@ -48,8 +28,28 @@ const Home = () => {
          <main>
            <HeroBanner />
            <BelowBanner />
+           <Testimonials />
          </main>
      );
 }
  
 export default Home;
+
+
+
+
+    
+// const setupEmblaCarousel = (emblaNode, options) => {
+//   const viewPort = emblaNode.querySelector(".embla__viewport");
+ 
+//   const embla = EmblaCarousel(viewPort, options);
+  
+ 
+// };
+
+// const options = {dragFree : true,containScroll: "trimSnaps" };
+// const emblaNodes = [].slice.call(document.querySelectorAll(".embla"));
+
+// const data = emblaNodes.map(emblaNode =>
+//   setupEmblaCarousel(emblaNode, options)
+// );

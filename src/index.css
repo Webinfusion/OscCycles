@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
+/* inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
 
 
 body {
@@ -7,7 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F2F3F7;
+  --bgColor:#F2F3F7;
   --container :1400px;
   --cTopMargin:80px;
   --cTopMargin2:60px;
@@ -17,6 +19,7 @@ body {
   --secondary2:#60E57C;
   --grey:#F9F9F9;
   --greyText: #D7CDCD;
+  background-color: var(--bgColor);
 
 
 }
@@ -53,7 +56,8 @@ a{
 
 
 .gradientBtn{
-  padding: 0px 20px;
+  padding: 20px 20px;
+  min-width: 100px;
   border: 0px;
   background: linear-gradient(45deg,var(--secondary1),var(--secondary2));
   border-radius: 8px;
@@ -61,6 +65,7 @@ a{
   font-weight: 600;
   color: white;
   position: relative;
+  margin-top: 30px;
 }
 .gradientBtn:hover{
   background: linear-gradient(135deg,var(--secondary1),var(--secondary2));
@@ -69,4 +74,11 @@ a{
 } 
 .greenText{
   color: var(--secondary1);
+}
+@media screen and (max-width:600px) {
+  .gradientBtn{
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
 }

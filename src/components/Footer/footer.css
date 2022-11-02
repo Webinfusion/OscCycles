@@ -14,6 +14,7 @@
   width: 50%;
   padding: 20px;
   color: white;
+  align-self: center;
 }
 .footerHead{
  font-weight: 600;
@@ -78,8 +79,6 @@ align-self: center;
   color: white;
 }
 .footerFormBtn{
-  width: 150px;
-  height: 50px;
   margin :20px 0px 0px 8%;
 }
 .footerFormInput{
@@ -134,14 +133,20 @@ align-self: center;
     width: 90%;
   }
   .topFooterRight, .topFooterLeft {
-    width: 100%;
+    width: 90%;
     padding: 0px;
   }
   .footerFormHead{
     margin: 15px 7%;
   }
+  .footerFormInputs{
+    width: 100%;
+  }
   .footerHead{
     font-size: 34px;
+  }
+  .footerFormBtn{
+    margin :20px 0px 0px 0%;
   }
 }
 @media screen and (max-width:640px){
@@ -154,13 +159,16 @@ align-self: center;
 @media screen and (max-width:450px){
   .footerHead{
     font-size: 28px;
+    text-transform: capitalize;
   }
   .footerDescription{
     font-size: 16px;
   }
-  .footerFormInputs{
-    width: 90%;
+  .footerLinkElement{
+    font-size: 14px;
+    margin-right: 15px;
   }
+  
   .footerFormInput{
     padding: 15px 10px;
     font-size: 14px;
@@ -169,7 +177,5 @@ align-self: center;
     font-size: 14px;
   
   }
-  .footerFormBtn{
-    margin :20px 0px 0px 4%;
-  }
+  
 }

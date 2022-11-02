@@ -40,10 +40,8 @@
 }
 
 .belowBannerButton{
-    width: 200px;
-    height: 60px;
+    padding: 20px 30px;
     border-radius: 32px;
-    margin-top: 40px;
 }
 .belowBannerButton:hover{
     background: linear-gradient(270deg,var(--secondary1),var(--secondary2));

@@ -14,7 +14,7 @@
   cursor: grab;
 }
 
-.embla__viewport.is-dragging {
+.embla__viewportis-dragging {
   cursor: grabbing;
 }
 

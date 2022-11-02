@@ -66,7 +66,7 @@ function App() {
       
         <BrowserRouter>
           <ThemeProvider theme={theme}>
-            <Navbar />
+            {/* <Navbar /> */}
             <Box height={{xs:60,sm:80}}/>
             <Routes>
               <Route path="/" element={<Home />} />
