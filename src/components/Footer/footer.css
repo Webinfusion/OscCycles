@@ -80,7 +80,7 @@ align-self: center;
 .footerFormBtn{
   width: 150px;
   height: 50px;
-  margin-left: 8%;
+  margin :20px 0px 0px 8%;
 }
 .footerFormInput{
   border: none;
@@ -101,7 +101,8 @@ align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  min-height: 30px;
+  padding: 10px 0px;
   background-color: var(--primary2);
 }
 .copyrightsText{
@@ -120,7 +121,7 @@ align-self: center;
     flex-direction: column;
   }
   .mapIframe{
-    width: 90%;
+    width: 100%;
     margin-bottom: 15px;
   }
   .footerContactInfo{
@@ -130,9 +131,11 @@ align-self: center;
 @media screen and (max-width:900px){
   .topFooter{
     flex-direction: column;
+    width: 90%;
   }
   .topFooterRight, .topFooterLeft {
     width: 100%;
+    padding: 0px;
   }
   .footerFormHead{
     margin: 15px 7%;
@@ -142,8 +145,31 @@ align-self: center;
   }
 }
 @media screen and (max-width:640px){
- 
+ .copyrightsText{
+  text-align: left;
+  font-size: 14px;
+}
  
 }
 @media screen and (max-width:450px){
+  .footerHead{
+    font-size: 28px;
+  }
+  .footerDescription{
+    font-size: 16px;
+  }
+  .footerFormInputs{
+    width: 90%;
+  }
+  .footerFormInput{
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+  .footerFormInput::placeholder{
+    font-size: 14px;
+  
+  }
+  .footerFormBtn{
+    margin :20px 0px 0px 4%;
+  }
 }

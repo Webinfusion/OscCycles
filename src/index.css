@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
 
 body {
   margin: 0;
@@ -24,6 +19,9 @@ body {
   --greyText: #D7CDCD;
 
 
+}
+main{
+  width: 100%;
 }
 h1,h2,h3,h4,h5,h6,p{
   margin: 0px;
@@ -57,16 +55,15 @@ a{
 .gradientBtn{
   padding: 0px 20px;
   border: 0px;
-  background: linear-gradient(180deg,var(--secondary1),var(--secondary2));
+  background: linear-gradient(45deg,var(--secondary1),var(--secondary2));
   border-radius: 8px;
   font-size: 18px;
   font-weight: 600;
   color: white;
-  margin-top: 40px;
   position: relative;
 }
 .gradientBtn:hover{
-  background: linear-gradient(270deg,var(--secondary1),var(--secondary2));
+  background: linear-gradient(135deg,var(--secondary1),var(--secondary2));
   box-shadow: 1px 1px 5px rgb(123, 123, 123);
 
 } 

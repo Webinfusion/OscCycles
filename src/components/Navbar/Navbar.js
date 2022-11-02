@@ -45,11 +45,9 @@ const Navbar = () => {
     return (
             <Box component='header' className={isScrolled === true ? "Navbar navScrolled" :"Navbar"} sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} position="fixed">
                 <nav className="insideNav">
-                    <div className="navLeft">
-                        <Link to="/"><img src="./images/CompanyLogo.svg" alt="" 
+                        <Link to="/" className="navLeft"><img src="./images/CompanyLogo.svg" alt="" 
                             className={isScrolled === true ? "compLogo compLogoScrolled" :"compLogo"} />
                         </Link>
-                    </div>
                    
                     <IconButton aria-label="delete" onClick={() =>setDrawer(!drawer)} 
                         sx={{display:{xs:'block',md:'none'},width:'50px',height:'50px',alignSelf:'center'}}>

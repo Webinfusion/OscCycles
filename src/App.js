@@ -67,7 +67,7 @@ function App() {
         <BrowserRouter>
           <ThemeProvider theme={theme}>
             <Navbar />
-            <Box height={80}/>
+            <Box height={{xs:60,sm:80}}/>
             <Routes>
               <Route path="/" element={<Home />} />
               {/* <Route path="/privacypolicy" element={<PrivacyPolicy />} /> */}
