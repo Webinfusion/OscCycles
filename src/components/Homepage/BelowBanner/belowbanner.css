@@ -40,7 +40,8 @@
 }
 
 .belowBannerButton{
-    padding: 20px 30px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 32px;
 }
 .belowBannerButton:hover{

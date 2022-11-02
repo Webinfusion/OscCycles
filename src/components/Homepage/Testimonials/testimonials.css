@@ -6,7 +6,7 @@
 .testimonialHead{
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 40px;
     text-transform: uppercase;
     color: var(--primary2);
     text-align: center;
@@ -57,4 +57,14 @@
     font-size: 20px;
     font-weight: 500;
     color: var(--primary);
+}
+@media screen and (max-width:900px) {
+    .testimonialHead{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:450px) {
+    .testimonialHead{
+        font-size: 22px;
+    }
 }

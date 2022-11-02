@@ -14,11 +14,22 @@ const Navbar = () => {
 
     const [drawer,setDrawer] =useState(false);
     const [isScrolled,setIsScrolled] =useState(false);
+    const location = window.location.pathname; 
 
-    window.onscroll =() =>{
-        if(window.scrollY <=200)  setIsScrolled(false);
-        else setIsScrolled(true);
-    }            
+    useEffect(() => {
+      if (location !== '/')
+        setIsScrolled(true)
+    }, [])
+    
+
+    window.addEventListener('scroll',() =>{
+        if (location === '/') {
+            if(window.scrollY <=150)  setIsScrolled(false);
+            else isScrolled === false && setIsScrolled(true);
+        }
+        
+        
+        } ,false);           
     
     
 

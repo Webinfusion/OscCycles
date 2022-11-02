@@ -1,4 +1,5 @@
 import "./testimonials.css";
+import emblaCarousel from "embla-carousel";
 
 import { testimonialData } from "assets/data";
 
@@ -17,6 +18,24 @@ export const Item =(props) =>{
 
 const Testimonials = () => {
 
+
+    const carouselOptions = {
+        loop: true,
+        dragFree: true,
+        containScroll: "trimSnaps",
+        // align: "center"
+      };
+
+      window.onload =() =>{
+        const emblaNode = document.querySelector(".embla");
+        console.log(emblaNode);
+          const viewPortNode = emblaNode.querySelector(".embla__viewport");
+          const embla = emblaCarousel(viewPortNode, carouselOptions);
+      }
+      
+    
+    
+
     return ( 
         <section className="testimonials">
             <h4 className="testimonialHead">Testimonials</h4>
@@ -32,8 +51,7 @@ const Testimonials = () => {
                         ))}
                     </div>
                 </div>  
-                <button className="embla__button embla__button--prev " type="button">Heee</button>
-            <button className="embla__button embla__button--next" type="button">Hee</button> 
+                
             </div>
             
            
