@@ -9,7 +9,7 @@
     min-height: 585px;
     display: flex;
     margin: auto;
-    
+    margin-top: var(--cTopMargin);
 }
 .belowBannerLeft{
     width: 45%;

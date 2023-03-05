@@ -1,0 +1,26 @@
+.products {
+	width: var(--container);
+	margin: auto;
+	padding-top: 100px;
+}
+.productPageItem {
+	width: 27vw;
+}
+.productPageItemText {
+	height: 78px;
+}
+@media screen and (max-width: 1300px) {
+	.productPageItem {
+		width: 30vw;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.productPageItem {
+		width: 44vw;
+	}
+}
+@media screen and (max-width: 740px) {
+	.productPageItem {
+		width: 100%;
+	}
+}

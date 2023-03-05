@@ -1,37 +1,44 @@
 import "./Ourcategories.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import CircularProgress from "@mui/material/CircularProgress";
 
-const Ourcategories = () => {
-    return ( 
-        <div className="ourcategoriesMain">
-             <h1 className="ourcategoriesHead">Our Categories</h1>
+const Item = (props) => {
+	const data = props.data;
+	var imgUrl;
+	data.thumbnail &&
+		data.thumbnail.map((row) => {
+			imgUrl = row.url;
+		});
 
-            <div className="ourcategoriesAll">
-                <div className="ourcategoriesItem">
-                    <img src="./images/Homepage/Rectanglegreen.png" className="ourcategoriesImage" />
-                    <div className="ourcategoriesItemRight">
-                        <h3 className="ourcategoriesItemHead">Mushyas</h3>
-                        <h4 className="ourcategoriesSubHead">Category 1</h4>
-                        <p className="ourcategoriesText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, voluptatum?</p>
-                        <button className="ourcategoriesItemBtn">View more</button>
-             
-                    </div>
-                </div>
+	return (
+		<div className="ourcategoriesItem">
+			<img src={imgUrl} className="ourcategoriesImage" />
+			<div className="ourcategoriesItemRight">
+				<h3 className="ourcategoriesItemHead">{data.displayName}</h3>
+				<h4 className="ourcategoriesSubHead">Category 1</h4>
+				<p className="ourcategoriesText">{data.description}</p>
+				<button className="ourcategoriesItemBtn">View more</button>
+			</div>
+		</div>
+	);
+};
 
-                <div className="ourcategoriesItem">
-                    <img src="./images/Homepage/Rectanglegreen.png" className="ourcategoriesImage" />
+const Ourcategories = ({ categoryData }) => {
+	return (
+		<div className="ourcategoriesMain">
+			<h1 className="homeSectionsHead">Our Categories</h1>
 
-                    <div className="ourcategoriesItemRight">
-                        <h3 className="ourcategoriesItemHead">Mushyas</h3>
-                        <h4 className="ourcategoriesSubHead">Category 1</h4>
-                        <p className="ourcategoriesText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, voluptatum?</p>
-                        <button className="ourcategoriesItemBtn">View more</button>
-                    </div>
-            
-                </div>
-         </div>
+			<div className="ourcategoriesAll">
+				{categoryData &&
+					categoryData.map((row) => {
+						return <Item data={row.fields} key={row.id} />;
+					})}
 
-        </div>
-     );
-}
- 
+				{!categoryData && <CircularProgress />}
+			</div>
+		</div>
+	);
+};
+
 export default Ourcategories;
