@@ -14,7 +14,7 @@ const Aboutus = () => {
 			</Typography>
 			<div className="aboutusPageMain">
 				<div className="aboutUsImageDiv mobileOff">
-					<img src="./images/Homepage/Aboutusimg.png" className="aboutusimg" />
+					<img src="/images/Homepage/Aboutusimg.png" className="aboutusimg" />
 				</div>
 				<div className="aboutusText">
 					<h3 className="aboutusPageHead">Assuring best quality </h3>
@@ -36,7 +36,7 @@ const Aboutus = () => {
 					</div>
 				</div>
 				<div className="aboutUsImageDiv mobileOn">
-					<img src="./images/Homepage/Aboutusimg.png" className="aboutusimg" />
+					<img src="/images/Homepage/Aboutusimg.png" className="aboutusimg" />
 				</div>
 			</div>
 		</main>
